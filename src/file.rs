@@ -1,5 +1,6 @@
 use crate::chat::*;
 use crate::constant;
+use crate::module::Module;
 use std::error::Error;
 use std::fs::{File, OpenOptions};
 use std::io::{Read, Write};
@@ -25,4 +26,19 @@ fn open_settings_file() -> Result<File, std::io::Error> {
         .write(true)
         .read(true)
         .open(constant::SETTINGS_FILE)
+}
+
+fn read_module(identifier: &str) -> Result<Module, std::io::Error> {
+    let file = open_modules_file()?;
+    let mut toml = String::new();
+    file.read_to_string(&mut toml)?;
+    let modules: Vec<Module> = toml::from_str(&toml).unwrap_or_default();
+}
+
+fn open_modules_file() -> Result<File, std::io::Error> {
+    OpenOptions::new()
+        .create(true)
+        .write(true)
+        .read(true)
+        .open(constant::MODULES_FILE)
 }
