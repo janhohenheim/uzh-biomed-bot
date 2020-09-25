@@ -14,8 +14,6 @@ pub fn schedule_maths() -> ScheduleHandle {
         .at("10:00")
         .and_every(Wednesday)
         .at("10:00")
-        .and_every(Saturday)
-        .at("00:08")
         .run(move || {
             println!("Let's send maths!");
             let current_date = format!("{}", Local::now().format("%Y-%m-%d"));
