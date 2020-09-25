@@ -15,7 +15,6 @@ pub fn schedule_maths() -> ScheduleHandle {
         .and_every(Wednesday)
         .at("10:00")
         .run(move || {
-            println!("Let's send maths!");
             let current_date = format!("{}", Local::now().format("%Y-%m-%d"));
             let module = read_module("MAT 182")
                 .expect("Failed to read modules file")
@@ -31,11 +30,12 @@ pub fn schedule_maths() -> ScheduleHandle {
                 name: module.name,
                 link,
             };
-            Runtime::new()
+            let broadcast_result = Runtime::new()
                 .expect("Failed to create Tokio runtime")
-                .block_on(broadcast_live_stream(view_model))
-                .expect("Failed to broadcast message");
+                .block_on(broadcast_live_stream(view_model));
+            if let Err(error) = broadcast_result {
+                println!("An error happened while broadcasting: {}", error)
+            }
         });
-    println!("Scheduled stuff");
     scheduler.watch_thread(Duration::from_millis(100))
 }

@@ -13,6 +13,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let _schedule_handle = schedule_maths();
 
     let mut bot = tbot::Bot::from_env("BOT_TOKEN").event_loop();
+    bot.username("uzh_biomedicine_bot".to_owned());
     bot.start(|context| async move {
         let telegram_chat = context
             .get_chat()

@@ -1,8 +1,8 @@
 use crate::persistence::*;
-use tbot::markup::*;
-use tbot::types::parameters::Text as ParseMode;
-
 use std::error::Error;
+use tbot::markup::*;
+use tbot::types::chat::Kind;
+use tbot::types::parameters::Text as ParseMode;
 
 pub struct LiveStreamViewModel {
     pub identifier: String,
@@ -32,21 +32,14 @@ async fn broadcast_message(message: String) -> Result<(), Box<dyn Error>> {
 
     let bot = tbot::Bot::from_env("BOT_TOKEN");
     for chat in chats {
-        bot.send_message(chat.id, ParseMode::markdown_v2(&message))
+        let message = bot
+            .send_message(chat.id, ParseMode::markdown_v2(&message))
             .call()
             .await?;
+        match message.chat.kind {
+            Kind::Private { .. } => {}
+            _ => bot.pin_chat_message(chat.id, message.id).call().await?,
+        };
     }
     Ok(())
 }
-
-/*
-pub async fn broadcast_live_stream(view_model: LiveStreamViewModel) -> Result<(), Box<dyn Error>> {
-    const INTRO: &'static str = "📢 A livestream is starting in 15 Minutes:";
-    let module_name = format!("{} __{}__", view_model.identifier, view_model.name);
-    let link = view_model.link.unwrap_or_else(|| {
-        "⚠️ Whoops, there should be a link here, but there is none. Contact @jnferner ⚠️".to_string()
-    });
-    let message = format!("{}\n**name**: {}\n**link**: {}", INTRO, module_name, link);
-    broadcast_message(message).await
-}
-*/
