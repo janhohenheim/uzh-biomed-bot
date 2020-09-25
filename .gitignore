@@ -13,3 +13,4 @@ target/
 
 .env
 chats.toml
+modules.toml
