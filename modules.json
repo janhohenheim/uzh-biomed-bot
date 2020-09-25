@@ -1,22 +1,45 @@
 [{
-    "identifier": "MAT 182",
-    "name": "Analysis for Natural Sciences",
+        "identifier": "MAT 182",
+        "name": "Analysis for Natural Sciences",
 
-    "live_streams": [{
-            "date": "2020-09-26",
-            "link": "https://example.com"
-        },
-        {
-            "date": "2020-09-29",
-            "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=fe67a581-034c-420f-a374-accc9f11d709&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjMyNzQzM30sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPWZlNjdhNTgxLTAzNGMtNDIwZi1hMzc0LWFjY2M5ZjExZDcwOSJ9fQ&keyId=uzh-ch-pl&signature=1cdd2728e7e6860308c27924d47963421618ac1ffa5ff7c33066ecce61e1e061"
-        },
-        {
-            "date": "2020-09-30",
-            "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=3b1b203f-9331-4c75-b350-c240881cda75&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjY1OTg3NH0sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPTNiMWIyMDNmLTkzMzEtNGM3NS1iMzUwLWMyNDA4ODFjZGE3NSJ9fQ&keyId=uzh-ch-pl&signature=7151f0375478e0abc3f7334aeb9430febde0a451751942411a51acbf01a97deb"
-        },
-        {
-            "date": "2020-10-06",
-            "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=0fd37089-1eb4-464f-b7cc-d3719e3d8bc3&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3OTIxNDAxNX0sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPTBmZDM3MDg5LTFlYjQtNDY0Zi1iN2NjLWQzNzE5ZTNkOGJjMyJ9fQ&keyId=uzh-ch-pl&signature=ac58d7af2297067bbc27f4f6a03fd923b75f8a064bfc169f5851a25777a68701"
-        }
-    ]
-}]
+        "live_streams": [{
+                "date": "2020-09-26",
+                "link": "https://example.com"
+            },
+            {
+                "date": "2020-09-29",
+                "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=fe67a581-034c-420f-a374-accc9f11d709&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjMyNzQzM30sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPWZlNjdhNTgxLTAzNGMtNDIwZi1hMzc0LWFjY2M5ZjExZDcwOSJ9fQ&keyId=uzh-ch-pl&signature=1cdd2728e7e6860308c27924d47963421618ac1ffa5ff7c33066ecce61e1e061"
+            },
+            {
+                "date": "2020-09-30",
+                "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=3b1b203f-9331-4c75-b350-c240881cda75&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjY1OTg3NH0sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPTNiMWIyMDNmLTkzMzEtNGM3NS1iMzUwLWMyNDA4ODFjZGE3NSJ9fQ&keyId=uzh-ch-pl&signature=7151f0375478e0abc3f7334aeb9430febde0a451751942411a51acbf01a97deb"
+            },
+            {
+                "date": "2020-10-06",
+                "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=0fd37089-1eb4-464f-b7cc-d3719e3d8bc3&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3OTIxNDAxNX0sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPTBmZDM3MDg5LTFlYjQtNDY0Zi1iN2NjLWQzNzE5ZTNkOGJjMyJ9fQ&keyId=uzh-ch-pl&signature=ac58d7af2297067bbc27f4f6a03fd923b75f8a064bfc169f5851a25777a68701"
+            }
+        ]
+    },
+    {
+        "identifier": "BIO 111",
+        "name": "Molecular and Classical Genetics",
+
+        "live_streams": [{
+                "date": "2020-09-28",
+                "link": "https://uzh.zoom.us/j/92416344942?pwd=eXZuZ1NRd0dreG4xWEFaOW9ucWw0dz09"
+            },
+            {
+                "date": "2020-09-30",
+                "link": "https://uzh.zoom.us/j/99748955349?pwd=dmRWYU41clZiU3N3b0p2bnVBRmQ5QT09"
+            },
+            {
+                "date": "2020-10-05",
+                "link": "https://uzh.zoom.us/j/93731047637?pwd=eSsyeFVQTE9CV29CQ3VpMDNiZEM1UT09"
+            },
+            {
+                "date": "2020-10-07",
+                "link": "https://uzh.zoom.us/j/94956355526?pwd=VGFUS1o2SExOYW8yN1N5Z0JvdkpKdz09"
+            }
+        ]
+    }
+]

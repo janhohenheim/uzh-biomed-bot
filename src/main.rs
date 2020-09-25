@@ -26,14 +26,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
         };
         append_chat(chat).expect("Failed to append to chat");
     });
-    bot.text(|context| async move {
-        let message = format!("You sent me {}", context.text.value);
-        context
-            .send_message_in_reply(&message)
-            .call()
-            .await
-            .expect("Failed to retrieve message");
-    });
     bot.polling().start().await.unwrap();
     Ok(())
 }
