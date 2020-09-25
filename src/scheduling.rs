@@ -1,32 +1,43 @@
-use async_std::task;
-use clokwerk::Interval::*;
-use clokwerk::{Scheduler, TimeUnits};
-use std::time::Duration;
-use tbot::types::{chat, parameters::Text};
+use crate::persistence::*;
+use crate::telegram::*;
 
-fn schedule_maths() {
-    let mut scheduler = Scheduler::with_tz(chrono::Utc);
-    let mut math_links = get_math_links();
+use chrono::Local;
+use clokwerk::Interval::*;
+use clokwerk::{ScheduleHandle, Scheduler};
+use std::time::Duration;
+use tokio::runtime::Runtime;
+
+pub fn schedule_maths() -> ScheduleHandle {
+    let mut scheduler = Scheduler::with_tz(Local::now().timezone());
     scheduler
         .every(Tuesday)
-        .at("14:20:17")
-        .and_every(Thursday)
-        .at("15:00")
+        .at("10:00")
+        .and_every(Wednesday)
+        .at("10:00")
+        .and_every(Saturday)
+        .at("00:08")
         .run(move || {
-            let current_link = math_links.pop().unwrap_or("Whoops, there is no link");
-            task::block_on(broadcast_message("Foo"));
+            println!("Let's send maths!");
+            let current_date = format!("{}", Local::now().format("%Y-%m-%d"));
+            let module = read_module("MAT 182")
+                .expect("Failed to read modules file")
+                .expect("Failed to find module MAT 182 in modules file");
+            let link = module
+                .live_streams
+                .into_iter()
+                .find(|live_stream| live_stream.date == current_date)
+                .map(|live_stream| live_stream.link);
+
+            let view_model = LiveStreamViewModel {
+                identifier: module.identifier,
+                name: module.name,
+                link,
+            };
+            Runtime::new()
+                .expect("Failed to create Tokio runtime")
+                .block_on(broadcast_live_stream(view_model))
+                .expect("Failed to broadcast message");
         });
-    let thread_handle = scheduler.watch_thread(Duration::from_millis(100));
-}
-
-async fn broadcast_message(message: &'static str) {
-    const CHAT: chat::Id = chat::Id(0);
-    const MESSAGE: &str = "`tbot` is a super-cool crate!";
-
-    let bot = tbot::Bot::from_env("BOT_TOKEN");
-    bot.send_message(CHAT, message).call().await.unwrap();
-}
-
-fn get_math_links() -> Vec<&'static str> {
-    vec!["foo"]
+    println!("Scheduled stuff");
+    scheduler.watch_thread(Duration::from_millis(100))
 }

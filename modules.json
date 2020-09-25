@@ -1,0 +1,18 @@
+[{
+    "identifier": "MAT 182",
+    "name": "Analysis for Natural Sciences",
+
+    "live_streams": [{
+            "date": "2020-09-26",
+            "link": "Hello World!"
+        },
+        {
+            "date": "2020-09-29",
+            "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=fe67a581-034c-420f-a374-accc9f11d709&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjMyNzQzM30sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPWZlNjdhNTgxLTAzNGMtNDIwZi1hMzc0LWFjY2M5ZjExZDcwOSJ9fQ&keyId=uzh-ch-pl&signature=1cdd2728e7e6860308c27924d47963421618ac1ffa5ff7c33066ecce61e1e061"
+        },
+        {
+            "date": "2020-09-30",
+            "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=3b1b203f-9331-4c75-b350-c240881cda75&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjY1OTg3NH0sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPTNiMWIyMDNmLTkzMzEtNGM3NS1iMzUwLWMyNDA4ODFjZGE3NSJ9fQ&keyId=uzh-ch-pl&signature=7151f0375478e0abc3f7334aeb9430febde0a451751942411a51acbf01a97deb"
+        }
+    ]
+}]

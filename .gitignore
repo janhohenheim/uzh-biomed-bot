@@ -12,5 +12,4 @@ target/
 **/*.rs.bk
 
 .env
-chats.toml
-modules.toml
+chats.json

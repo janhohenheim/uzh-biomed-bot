@@ -1,20 +1,16 @@
 use uzh_biomed_bot::chat::*;
-use uzh_biomed_bot::file::*;
+use uzh_biomed_bot::persistence::*;
+use uzh_biomed_bot::scheduling::*;
 
 use dotenv;
-use std::collections::HashMap;
-use std::env;
 use std::error::Error;
-use std::thread;
-use std::time::Duration;
 use tbot::prelude::*;
-use tbot::types::{chat, parameters::Text};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     dotenv::dotenv().expect("Failed to load .env");
 
-    // schedule_maths();
+    let _schedule_handle = schedule_maths();
 
     let mut bot = tbot::Bot::from_env("BOT_TOKEN").event_loop();
     bot.start(|context| async move {
