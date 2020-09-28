@@ -19,8 +19,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let mut bot = tbot::Bot::from_env("BOT_TOKEN").event_loop();
     bot.username("uzh_biomedicine_bot".to_owned());
     bot.start(handle_subscription);
-    bot.command("/subscribe", handle_subscription);
-    bot.command("/subscribe", handle_unsubscription);
+    bot.command("subscribe", handle_subscription);
+    bot.command("unsubscribe", handle_unsubscription);
 
     bot.polling().start().await.unwrap();
     Ok(())

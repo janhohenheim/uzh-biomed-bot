@@ -13,3 +13,5 @@ target/
 
 .env
 chats.json
+
+.idea/
