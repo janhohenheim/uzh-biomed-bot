@@ -12,7 +12,9 @@ type Context<T> = std::sync::Arc<tbot::contexts::Command<tbot::contexts::Text<T>
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    dotenv::dotenv().expect("Failed to load .env");
+    if dotenv::dotenv().is_err() {
+        println!("No .env file found, reading config only from environment");
+    }
 
     let _schedule_handle = schedule_maths();
 
