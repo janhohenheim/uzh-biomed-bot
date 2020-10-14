@@ -113,7 +113,7 @@ async fn handle_links(context: Context<impl tbot::connectors::Connector>) {
 async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connector>) {
     let message = match context.data.as_str() {
         constant::MATHS_CALLBACK => markdown_v2((
-            "- ",
+            "The following links are important for MAT 182:\n- ",
             link(
                 "OLAT",
                 "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/85421310414617",
@@ -123,10 +123,15 @@ async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connect
                 "Course",
                 "https://www.math.uzh.ch/index.php?id=ve_vo_det&key1=0&key2=3881&semId=41",
             ),
+            "\n- ",
+            link(
+                "Exercises",
+                "https://w3.math.uzh.ch/my/index.php?id=lecture",
+            ),
         ))
         .to_string(),
         constant::PHYSICS_CALLBACK => markdown_v2((
-            "- ",
+            "The following links are important for PHY 117:\n- ",
             link(
                 "OLAT",
                 "https://lms.uzh.ch/auth/RepositoryEntry/16830890450/CourseNode/85421310414617",
