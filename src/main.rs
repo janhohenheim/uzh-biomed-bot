@@ -7,11 +7,11 @@ use uzh_biomed_bot::scheduling::*;
 
 use dotenv;
 use std::error::Error;
+use tbot::types::parameters::Text as ParseMode;
 use tbot::{
     markup::*,
     prelude::*,
     types::keyboard::inline::{Button, ButtonKind},
-    types::parameters::CallbackAction,
 };
 type Context<T> = std::sync::Arc<tbot::contexts::Command<tbot::contexts::Text<T>>>;
 type CallbackContext<T> = std::sync::Arc<tbot::contexts::DataCallback<T>>;
@@ -138,10 +138,18 @@ async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connect
         _ => panic!("Invalid callback"),
     };
 
+    let chat_id = if let tbot::types::callback::query::Origin::Message(message) = &context.origin {
+        message.chat.id
+    } else {
+        return;
+    };
+
     let call_result = context
-        .answer(CallbackAction::Text(&message, false))
+        .bot
+        .send_message(chat_id, ParseMode::markdown_v2(&message))
         .call()
         .await;
+
     if let Err(err) = call_result {
         dbg!(err);
     }
