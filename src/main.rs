@@ -8,8 +8,10 @@ use uzh_biomed_bot::scheduling::*;
 use dotenv;
 use std::error::Error;
 use tbot::{
+    markup::*,
     prelude::*,
     types::keyboard::inline::{Button, ButtonKind},
+    types::parameters::CallbackAction,
 };
 type Context<T> = std::sync::Arc<tbot::contexts::Command<tbot::contexts::Text<T>>>;
 type CallbackContext<T> = std::sync::Arc<tbot::contexts::DataCallback<T>>;
@@ -110,12 +112,36 @@ async fn handle_links(context: Context<impl tbot::connectors::Connector>) {
 
 async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connector>) {
     let message = match context.data.as_str() {
-        constant::MATHS_CALLBACK => "You're cool too!",
-        constant::PHYSICS_CALLBACK => "Thanks, I'm trying!",
-        _ => "Are you trying to hack me?",
+        constant::MATHS_CALLBACK => markdown_v2((
+            "- ",
+            link(
+                "OLAT",
+                "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/85421310414617",
+            ),
+            "\n- ",
+            link(
+                "Course",
+                "https://www.math.uzh.ch/index.php?id=ve_vo_det&key1=0&key2=3881&semId=41",
+            ),
+        ))
+        .to_string(),
+        constant::PHYSICS_CALLBACK => markdown_v2((
+            "- ",
+            link(
+                "OLAT",
+                "https://lms.uzh.ch/auth/RepositoryEntry/16830890450/CourseNode/85421310414617",
+            ),
+            "\n- ",
+            link("Course", "https://www.physik.uzh.ch/de/lehre/PHY117/HS2020"),
+        ))
+        .to_string(),
+        _ => panic!("Invalid callback"),
     };
 
-    let call_result = context.notify(message).call().await;
+    let call_result = context
+        .answer(CallbackAction::Text(&message, true))
+        .call()
+        .await;
     if let Err(err) = call_result {
         dbg!(err);
     }
