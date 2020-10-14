@@ -139,7 +139,7 @@ async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connect
     };
 
     let call_result = context
-        .answer(CallbackAction::Text(&message, true))
+        .answer(CallbackAction::Text(&message, false))
         .call()
         .await;
     if let Err(err) = call_result {
