@@ -3,67 +3,14 @@
         "name": "Analysis for Natural Sciences",
 
         "live_streams": [{
-                "date": "2020-09-26",
-                "link": "https://example.com"
-            },
-            {
-                "date": "2020-09-29",
-                "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=fe67a581-034c-420f-a374-accc9f11d709&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjMyNzQzM30sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPWZlNjdhNTgxLTAzNGMtNDIwZi1hMzc0LWFjY2M5ZjExZDcwOSJ9fQ&keyId=uzh-ch-pl&signature=1cdd2728e7e6860308c27924d47963421618ac1ffa5ff7c33066ecce61e1e061"
-            },
-            {
-                "date": "2020-09-30",
-                "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=3b1b203f-9331-4c75-b350-c240881cda75&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3MjY1OTg3NH0sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPTNiMWIyMDNmLTkzMzEtNGM3NS1iMzUwLWMyNDA4ODFjZGE3NSJ9fQ&keyId=uzh-ch-pl&signature=7151f0375478e0abc3f7334aeb9430febde0a451751942411a51acbf01a97deb"
-            },
-            {
-                "date": "2020-10-06",
-                "link": "https://player.cast.switch.ch/?tenant=uzh-ch&id=0fd37089-1eb4-464f-b7cc-d3719e3d8bc3&policy=eyJTdGF0ZW1lbnQiOnsiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6MTYwMTA3OTIxNDAxNX0sIlJlc291cmNlIjoiaHR0cHM6XC9cL3BsYXllci5jYXN0LnN3aXRjaC5jaD90ZW5hbnQ9dXpoLWNoJmlkPTBmZDM3MDg5LTFlYjQtNDY0Zi1iN2NjLWQzNzE5ZTNkOGJjMyJ9fQ&keyId=uzh-ch-pl&signature=ac58d7af2297067bbc27f4f6a03fd923b75f8a064bfc169f5851a25777a68701"
-            },
-            {
-                "date": "2020-10-13",
+                "date": "2020-12-09",
                 "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
             },
             {
-                "date": "2020-10-14",
+                "date": "2020-12-16",
                 "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-10-20",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-10-21",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-10-27",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-10-28",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-11-10",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-11-11",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-11-17",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-11-18",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-11-24",
-                "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
-            },
-            {
-                "date": "2020-11-25",
+            }, {
+                "date": "2020-12-17",
                 "link": "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/102334282907626"
             }
         ]
@@ -73,27 +20,8 @@
         "name": "Molecular and Classical Genetics",
 
         "live_streams": [{
-                "date": "2020-10-19",
-                "link": "https://uzh.zoom.us/j/96692489046?pwd=TU1nZFZqQVBoSDhsZTI0YWJoVVlEZz09"
-            },
-            {
-                "date": "2020-10-28",
-                "link": "https://uzh.zoom.us/webinar/register/WN_3NMTMuB0S8qBxTCvONbTUw"
-            }, {
-                "date": "2020-11-11",
-                "link": "https://uzh.zoom.us/webinar/register/WN_1XFdGopBTD-F8exs8toS1Q"
-            },
-            {
-                "date": "2020-11-16",
-                "link": "https://uzh.zoom.us/webinar/register/WN_lkyVaEgORU6wNjgJIdfDwA"
-            }, {
-                "date": "2020-11-18",
-                "link": "https://uzh.zoom.us/webinar/register/WN_mnVm8TMbRky5AaGx6Gm-jQ"
-            },
-            {
-                "date": "2020-11-23",
-                "link": "https://uzh.zoom.us/webinar/register/WN_dkAkP-QbTNKuOhPZcfZFdQ"
-            }
-        ]
+            "date": "2020-10-09",
+            "link": "https://uzh.zoom.us/webinar/register/WN_APdXwOhSRr6_9Y8kEVYtnA"
+        }]
     }
 ]
