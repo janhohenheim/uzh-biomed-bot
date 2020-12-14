@@ -20,8 +20,16 @@
         "name": "Molecular and Classical Genetics",
 
         "live_streams": [{
-            "date": "2020-10-09",
-            "link": "https://uzh.zoom.us/webinar/register/WN_APdXwOhSRr6_9Y8kEVYtnA"
-        }]
+                "date": "2020-10-09",
+                "link": "https://uzh.zoom.us/webinar/register/WN_APdXwOhSRr6_9Y8kEVYtnA"
+            }, {
+                "date": "2020-12-14",
+                "link": "https://uzh.zoom.us/j/99711346695?pwd=cnhsVFh1UWVrV1ByOGVOQk9wYkR0QT09"
+            },
+            {
+                "date": "2020-12-16",
+                "link": "https://uzh.zoom.us/j/92642979123?pwd=c1RkYkpaQys5U012Tk9sdU1EL29RQT09"
+            }
+        ]
     }
 ]
