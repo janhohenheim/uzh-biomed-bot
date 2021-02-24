@@ -113,15 +113,15 @@ async fn handle_links(context: Context<impl tbot::connectors::Connector>) {
 async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connector>) {
     let message = match context.data.as_str() {
         constant::MATHS_CALLBACK => markdown_v2((
-            "The following links are important for MAT 182:\n- ",
+            "The following links are important for MAT 183:\n- ",
             link(
                 "OLAT",
-                "https://lms.uzh.ch/auth/RepositoryEntry/16814276984/CourseNode/85421310414617",
+                "https://lms.uzh.ch/auth/RepositoryEntry/16974184862/CourseNode/103233511448483",
             ),
             "\n- ",
             link(
                 "Course",
-                "https://www.math.uzh.ch/index.php?id=ve_vo_det&key1=0&key2=3881&semId=41",
+                "https://www.math.uzh.ch/mat183.1",
             ),
             "\n- ",
             link(
@@ -131,13 +131,13 @@ async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connect
         ))
         .to_string(),
         constant::PHYSICS_CALLBACK => markdown_v2((
-            "The following links are important for PHY 117:\n- ",
+            "The following links are important for PHY 127:\n- ",
             link(
                 "OLAT",
-                "https://lms.uzh.ch/auth/RepositoryEntry/16830890450/CourseNode/85421310414617",
+                "https://lms.uzh.ch/auth/RepositoryEntry/16955310089/CourseNode/103233523024807",
             ),
             "\n- ",
-            link("Course", "https://www.physik.uzh.ch/de/lehre/PHY117/HS2020"),
+            link("Course", "https://www.physik.uzh.ch/de/lehre/PHY127/FS2021.html"),
         ))
         .to_string(),
         _ => panic!("Invalid callback"),

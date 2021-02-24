@@ -1,6 +1,5 @@
 use crate::chat::*;
 use crate::constant;
-use crate::module::Module;
 use std::error::Error;
 use std::fs::{File, OpenOptions};
 use std::io::{Read, Seek, SeekFrom, Write};
@@ -57,16 +56,4 @@ pub fn remove_chat(chat: Chat) -> Result<Option<Chat>, Box<dyn Error>> {
         } else {
                 Ok(None)
         }
-}
-
-pub fn read_module(identifier: &str) -> Result<Option<Module>, Box<dyn Error>> {
-        let mut file = open_file(constant::MODULES_FILE)?;
-        let mut json = String::new();
-        file.read_to_string(&mut json)?;
-        let modules: Vec<Module> =
-                serde_json::from_str(&json).expect("Failed to parse modules file");
-
-        Ok(modules
-                .into_iter()
-                .find(|module| module.identifier == identifier))
 }
