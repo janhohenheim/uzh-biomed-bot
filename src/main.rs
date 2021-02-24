@@ -93,11 +93,11 @@ async fn handle_unsubscription(context: Context<impl tbot::connectors::Connector
 async fn handle_links(context: Context<impl tbot::connectors::Connector>) {
     const KEYBOARD: &[&[Button]] = &[&[
         Button::new(
-            "MAT 182",
+            "MAT 183",
             ButtonKind::CallbackData(constant::MATHS_CALLBACK),
         ),
         Button::new(
-            "PHY 117",
+            "PHY 127",
             ButtonKind::CallbackData(constant::PHYSICS_CALLBACK),
         ),
     ]];
