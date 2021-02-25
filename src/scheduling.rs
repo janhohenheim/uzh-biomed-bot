@@ -45,7 +45,7 @@ pub fn schedule_maths() -> ScheduleHandle {
                 password: Some("864624".to_owned()),
             })
         });
-    scheduler.every(Tuesday).at("10:00").run(move || {
+    scheduler.every(Thursday).at("10:00").run(move || {
         schedule_module(LiveStreamViewModel {
             identifier: "BIO 122".to_owned(),
             name: "Verhaltensbiologie ".to_owned(),
