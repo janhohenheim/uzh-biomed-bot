@@ -55,6 +55,16 @@ pub fn schedule_maths() -> ScheduleHandle {
             password: Some("133158".to_owned()),
         })
     });
+    scheduler.every(Friday).at("07:45").run(move || {
+        schedule_module(LiveStreamViewModel {
+            identifier: "PHY 127".to_owned(),
+            name: "Physik für Life Sciences II".to_owned(),
+            link: Some(
+                "https://uzh.zoom.us/j/94999395653?pwd=OHk0MkYxRkZZL1pIcVIwc2JGQUdoQT09".to_owned(),
+            ),
+            password: Some("PHY127".to_owned()),
+        })
+    });
     scheduler.watch_thread(Duration::from_millis(100))
 }
 
