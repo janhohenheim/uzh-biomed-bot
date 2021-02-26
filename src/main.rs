@@ -91,16 +91,32 @@ async fn handle_unsubscription(context: Context<impl tbot::connectors::Connector
 }
 
 async fn handle_links(context: Context<impl tbot::connectors::Connector>) {
-    const KEYBOARD: &[&[Button]] = &[&[
-        Button::new(
-            "MAT 183",
-            ButtonKind::CallbackData(constant::MATHS_CALLBACK),
-        ),
-        Button::new(
-            "PHY 127",
-            ButtonKind::CallbackData(constant::PHYSICS_CALLBACK),
-        ),
-    ]];
+    const KEYBOARD: &[&[Button]] = &[
+        &[
+            Button::new(
+                "UZH Websites",
+                ButtonKind::CallbackData(constant::callback_token::UZH_WEBSITES),
+            ),
+            Button::new(
+                "OLAT",
+                ButtonKind::CallbackData(constant::callback_token::OLAT),
+            ),
+        ],
+        &[
+            Button::new(
+                "MAT 183",
+                ButtonKind::CallbackData(constant::callback_token::MAT_183),
+            ),
+            Button::new(
+                "PHY 127",
+                ButtonKind::CallbackData(constant::callback_token::PHY_127),
+            ),
+        ],
+        &[Button::new(
+            "Discord",
+            ButtonKind::CallbackData(constant::callback_token::DISCORD),
+        )],
+    ];
 
     context
         .send_message("Select the module you wish to see links for")
@@ -112,17 +128,38 @@ async fn handle_links(context: Context<impl tbot::connectors::Connector>) {
 
 async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connector>) {
     let message = match context.data.as_str() {
-        constant::MATHS_CALLBACK => markdown_v2((
+        constant::callback_token::UZH_WEBSITES => markdown_v2((
+            "The following UZH websites are relevant:\n- ",
+            link("Homepage", "https://www.uzh.ch/de.html"),
+            "\n- ",
+            link("Webmail", "https://webmail.uzh.ch/"),
+            "\n- ",
+            link(
+                "Launchpad",
+                "https://studentservices.uzh.ch/uzh/launchpad/#Shell-home",
+            ),
+            "\n- ",
+            link("Module Booking", "https://studentservices.uzh.ch/mb"),
+            "\n- ",
+            link(
+                "Swisscovery",
+                "https://swisscovery.slsp.ch/discovery/search?vid=41SLSP_UZB:VU1_UNION&lang=en",
+            ),
+        ))
+        .to_string(),
+        constant::callback_token::OLAT => markdown_v2(link(
+            "OLAT",
+            "https://lms.uzh.ch/auth/MyCoursesSite/0/Favorits/0",
+        ))
+        .to_string(),
+        constant::callback_token::MAT_183 => markdown_v2((
             "The following links are important for MAT 183:\n- ",
             link(
                 "OLAT",
                 "https://lms.uzh.ch/auth/RepositoryEntry/16974184862/CourseNode/103233511448483",
             ),
             "\n- ",
-            link(
-                "Course",
-                "https://www.math.uzh.ch/mat183.1",
-            ),
+            link("Website", "https://www.math.uzh.ch/mat183.1"),
             "\n- ",
             link(
                 "Exercises",
@@ -130,14 +167,26 @@ async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connect
             ),
         ))
         .to_string(),
-        constant::PHYSICS_CALLBACK => markdown_v2((
+        constant::callback_token::PHY_127 => markdown_v2((
             "The following links are important for PHY 127:\n- ",
             link(
                 "OLAT",
                 "https://lms.uzh.ch/auth/RepositoryEntry/16955310089/CourseNode/103233523024807",
             ),
             "\n- ",
-            link("Course", "https://www.physik.uzh.ch/de/lehre/PHY127/FS2021.html"),
+            link(
+                "Website",
+                "https://www.physik.uzh.ch/de/lehre/PHY127/FS2021.html",
+            ),
+        ))
+        .to_string(),
+        constant::callback_token::DISCORD => markdown_v2((
+            "The following Discord servers are used by students:\n- ",
+            link("Biomed Erstis", "https://discord.gg/kNhWwUGt8a"),
+            "\n- ",
+            link("BIUZ Biomedizin Server", "https://discord.gg/Dt454GHdDE"),
+            "\n- ",
+            link("UZH Students", "https://discord.gg/XJU44tdZr3"),
         ))
         .to_string(),
         _ => panic!("Invalid callback"),
