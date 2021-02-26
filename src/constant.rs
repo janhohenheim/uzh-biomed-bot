@@ -1,7 +1,7 @@
 pub const SETTINGS_FILE: &'static str = "chats.json";
 pub const MODULES_FILE: &'static str = "modules.json";
 
-mod callback_token {
+pub mod callback_token {
     pub const UZH_WEBSITES: &'static str = "UZH Websites";
     pub const OLAT: &'static str = "OLAT";
 
