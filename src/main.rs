@@ -165,6 +165,11 @@ async fn handle_callback(context: CallbackContext<impl tbot::connectors::Connect
                 "Exercises",
                 "https://w3.math.uzh.ch/my/index.php?id=lecture",
             ),
+            "\n- ",
+            link(
+                "Slack Forum",
+                "https://app.slack.com/client/T01LQ47LN3H/D01NUBXNCDR"
+            )
         ))
         .to_string(),
         constant::callback_token::PHY_127 => markdown_v2((
