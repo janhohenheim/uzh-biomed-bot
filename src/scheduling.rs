@@ -39,7 +39,7 @@ pub fn schedule_maths() -> ScheduleHandle {
                 identifier: "CHE 127".to_owned(),
                 name: "Organische Chemie für die Life Sciences".to_owned(),
                 link: Some(
-                    "https://uzh.zoom.us/s/92605143274?pwd=cjc1OUlSZFRSZ3FqdDU0aE54K0VWQT09"
+                    "https://uzh.zoom.us/j/94010320079?pwd=cjlQRWpsUjlCL1QvcVpEWE5BazBrdz09"
                         .to_owned(),
                 ),
                 password: Some("864624".to_owned()),
